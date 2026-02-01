@@ -3,23 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style/style.css" />
     <title>ActiveBox</title>
   </head>
   <body>
     <header class="header">
-      <div class="container">
+      <div class="header__block">
         <div class="header__logo">
-          <img class="header__logo-img" src="src/header__logo.svg" alt="logo" />
+          <a class="header__logo-link"
+            ><img
+              class="header__logo-img"
+              src="src/header__logo.svg"
+              alt="logo"
+          /></a>
         </div>
-        <ul>
-          <li>features</li>
-          <li>features</li>
-          <li>features</li>
-          <li>features</li>
-          <li>features</li>
-        </ul>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="nav__list-menu"><a class="nav__link">features</a></li>
+            <li class="nav__list-menu"><a class="nav__link">works</a></li>
+            <li class="nav__list-menu"><a class="nav__link">our team</a></li>
+            <li class="nav__list-menu">
+              <a class="nav__link">testimonials</a>
+            </li>
+            <li class="nav__list-menu"><a class="nav__link">download</a></li>
+          </ul>
+        </nav>
       </div>
+
+      <section class="banner">
+        <div class="banner__container">
+          <h1 class="banner__title">
+            Your Favorite One Page Multi Purpose Template
+          </h1>
+          <p class="banner__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            commodo cursus magna vel scelerisqe nisl consectetur et.
+          </p>
+          <button class="banner__btn">Find Out More</button>
+        </div>
+      </section>
     </header>
   </body>
 </html>
