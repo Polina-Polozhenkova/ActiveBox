@@ -13,41 +13,49 @@
     <title>ActiveBox</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header__block">
-        <div class="header__logo">
-          <a class="header__logo-link"
-            ><img
-              class="header__logo-img"
-              src="src/header__logo.svg"
-              alt="logo"
+    <section class="banner">
+      <header class="header">
+        <div class="container header__container">
+          <a class="header__wrapper-logo"
+            ><img class="header__logo" src="src/header__logo.svg" alt="logo"
           /></a>
+          <nav class="header__nav nav">
+            <ul class="nav-list">
+              <li class="nav__item"><a class="nav__link">features</a></li>
+              <li class="nav__item"><a class="nav__link">works</a></li>
+              <li class="nav__item"><a class="nav__link">our team</a></li>
+              <li class="nav__item">
+                <a class="nav__link">testimonials</a>
+              </li>
+              <li class="nav__item"><a class="nav__link">download</a></li>
+            </ul>
+          </nav>
+          <button class="header__toggle-menu">
+            <svg
+              width="24"
+              height="18"
+              viewBox="0 0 24 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0H24V3H0V0ZM0 7.5H24V10.5H0V7.5ZM0 15H24V18H0V15Z"
+                fill="white"
+              />
+            </svg>
+          </button>
         </div>
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li class="nav__list-menu"><a class="nav__link">features</a></li>
-            <li class="nav__list-menu"><a class="nav__link">works</a></li>
-            <li class="nav__list-menu"><a class="nav__link">our team</a></li>
-            <li class="nav__list-menu">
-              <a class="nav__link">testimonials</a>
-            </li>
-            <li class="nav__list-menu"><a class="nav__link">download</a></li>
-          </ul>
-        </nav>
+      </header>
+      <div class="banner__container container">
+        <h1 class="banner__title">
+          Your Favorite One Page Multi Purpose Template
+        </h1>
+        <p class="banner__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+          commodo cursus magna vel scelerisqe nisl consectetur et.
+        </p>
+        <button class="banner__btn">Find Out More</button>
       </div>
-
-      <section class="banner">
-        <div class="banner__container">
-          <h1 class="banner__title">
-            Your Favorite One Page Multi Purpose Template
-          </h1>
-          <p class="banner__text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            commodo cursus magna vel scelerisqe nisl consectetur et.
-          </p>
-          <button class="banner__btn">Find Out More</button>
-        </div>
-      </section>
-    </header>
+    </section>
   </body>
 </html>
