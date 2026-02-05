@@ -5,6 +5,8 @@
 }
 
 $colorbg: #ff4343;
+$colorTitle: #2d3033;
+$colorText: #6c7279;
 $fontCardo: "Cardo", serif;
 
 @mixin font($fontSize, $lineHeight, $fontWeight: 400) {
@@ -17,70 +19,68 @@ body {
   //   font-family: "Cardo", serif;
 }
 .container {
-  max-width: 1200;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 15px;
 }
 .header {
-  padding: 38px 0 35px;
+  padding: 38px 0;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1;
+  border-bottom: 1px solid #babbc5;
   @media (max-width: 1024px) {
     padding: 38px 20px;
   }
-  @media (max-width: 767px) {
-    padding: 21px 20px;
+  @media (max-width: 320px) {
+    padding: 19px 0;
+    border: none;
   }
-  border-bottom: 1px solid #babbc5;
 
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 43px 170px;
-    @media (max-width: 1024px) {
-      padding: 43px 20px;
-      justify-content: space-between;
-      align-items: center;
-    }
-    @media (max-width: 767px) {
-      padding: 21px 20px;
-      justify-content: space-between;
-      align-items: center;
-    }
   }
 
   &__toggle-menu {
     display: none;
-    @media (max-width: 767px) {
+    @media (max-width: 320px) {
       display: flex;
+      background: transparent;
+      border: none;
     }
   }
 
   &__wrapper-logo {
     display: flex;
     max-width: 183px;
+    @media (max-width: 1024px) {
+      max-width: 180px;
+    }
+    @media (max-width: 320px) {
+      max-width: 103px;
+    }
   }
   &__logo {
     width: 100%;
   }
 }
-
-.nav-list {
-  display: flex;
-  list-style: none;
-  column-gap: 40px;
-
-  // &__item {
-  //   @include font(12px, 14px, 700);
-  //   color: #fff;
-  //   text-transform: uppercase;
-  // }
-
+.nav {
+  @media (max-width: 767px) {
+    display: none;
+  }
+  &__list {
+    display: flex;
+    list-style: none;
+    column-gap: 40px;
+    @media (max-width: 1024px) {
+      column-gap: 25px;
+    }
+  }
   &__link {
     @include font(12px, 14px, 700);
     color: #fff;
@@ -89,13 +89,16 @@ body {
 }
 
 .banner {
-  padding: 223px 0 126px;
+  padding: 257px 0 126px;
   text-align: center;
   background-image: url(../src/bg-img.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  @media (max-width: 320px) {
+    padding: 106px 0 52px;
+  }
   &::after {
     content: "";
     display: block;
@@ -106,25 +109,11 @@ body {
     left: 0;
     background-color: #252b49;
     opacity: 0.8;
-    @media (max-width: 1024px) {
-      padding: 150px 20px;
-      text-align: center;
-    }
-    @media (max-width: 767px) {
-      padding: 106px 20px 258px 20px;
-      text-align: center;
-    }
   }
 
   &__container {
     position: relative;
     z-index: 1;
-    @media (max-width: 1024px) {
-      max-width: 1014px;
-    }
-    @media (max-width: 767px) {
-      max-width: 310px;
-    }
   }
 
   &__title {
@@ -136,7 +125,7 @@ body {
       @include font(48px, 56px, 900);
       margin-bottom: 61px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 320px) {
       @include font(36px, 42px, 900);
       margin-bottom: 40px;
     }
@@ -150,7 +139,7 @@ body {
       @include font(18px, 21px);
       margin-bottom: 89px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 320px) {
       @include font(14px, 16px);
       margin-bottom: 59px;
     }
@@ -166,11 +155,10 @@ body {
     border: none;
     @include font(24px, 28px, 900);
     @media (max-width: 1024px) {
-      padding: 28px 77px 31px 77px;
       max-width: 314px;
     }
-    @media (max-width: 767px) {
-      padding: 14px 45px;
+    @media (max-width: 320px) {
+      padding: 14px;
       max-width: 279px;
     }
   }
@@ -180,5 +168,375 @@ body {
   }
   &__btn:active {
     box-shadow: 4px 4px 30px #ff4343;
+  }
+}
+
+.featires {
+  padding: 109px 170px 116px;
+  @media (max-width: 1024px) {
+    .featires {
+      padding: 80px 20px;
+    }
+  }
+  @media (max-width: 320px) {
+    .featires {
+      padding: 40px 21px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 31px;
+    row-gap: 87px;
+    text-align: center;
+    @media (max-width: 1024px) {
+      column-gap: 20px;
+      row-gap: 53px;
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      row-gap: 41px;
+    }
+  }
+}
+.featire__info {
+  text-align: center;
+  max-width: 370px;
+  width: 100%;
+  @media (max-width: 1024px) {
+    .featire__info {
+      max-width: 315px;
+      width: 100%;
+    }
+  }
+  @media (max-width: 320px) {
+    max-width: 279px;
+    width: 100%;
+  }
+
+  .featire__icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 52px;
+    @media (max-width: 1024px) {
+      width: 85px;
+      height: 83px;
+      margin-bottom: 44px;
+    }
+    @media (max-width: 320px) {
+      width: 75px;
+      height: 75px;
+      margin-bottom: 37px;
+    }
+  }
+  .featire__title {
+    @include font(24px, 28px, 900);
+    color: $colorTitle;
+    margin-bottom: 42px;
+    text-transform: uppercase;
+    @media (max-width: 1024px) {
+      @include font(18px, 21px, 900);
+      margin-bottom: 27px;
+    }
+    @media (max-width: 320px) {
+      @include font(18px, 21px, 900);
+      margin-bottom: 8px;
+    }
+  }
+  .featire__text {
+    @include font(18px, 21px, 400);
+    color: $colorText;
+    @media (max-width: 1024px) {
+      @include font(14px, 14px, 400);
+    }
+    @media (max-width: 320px) {
+      @include font(14px, 16px, 400);
+    }
+  }
+}
+
+.works {
+  &__container {
+    max-width: 1510px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    @media (max-width: 1024px) {
+      max-width: 1024px;
+    }
+    @media (max-width: 320px) {
+      max-width: 320px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+.work {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @media (max-width: 1024px) {
+      width: 257px;
+      height: 230px;
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: 320px) {
+      width: 160px;
+      height: 144px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 67, 67, 0.8);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    // &:hover {
+    //   opacity: 1;
+    // }
+    // &:active {
+    //   opacity: 1;
+    //   background: rgba(185, 12, 12, 0.8);
+    // }  не работает тут и в таком виде
+  }
+  &__title {
+    @include font(24px, 28px, 900);
+    color: #fff;
+    margin-bottom: 36px;
+    @media (max-width: 1024px) {
+      @include font(18px, 21px, 900);
+      margin-bottom: 22px;
+    }
+    @media (max-width: 320px) {
+      @include font(18px, 21px, 900);
+      margin-bottom: 7px;
+    }
+  }
+  &__text {
+    @include font(18px, 21px, 400);
+    color: #fff;
+    @media (max-width: 1024px) {
+      @include font(14px, 16px, 400);
+    }
+    @media (max-width: 320px) {
+      @include font(14px, 16px, 400);
+    }
+  }
+}
+
+.work__content:hover {
+  opacity: 1;
+}
+.work__content:active {
+  opacity: 1;
+  background: rgba(185, 12, 12, 0.8);
+}
+
+.team {
+  padding: 114px 170px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+    @media (max-width: 1024px) {
+      column-gap: 25px;
+    }
+    @media (max-width: 320px) {
+      grid-template-columns: 1fr;
+      row-gap: 56px;
+    }
+  }
+  &__container {
+    @media (max-width: 1024px) {
+      max-width: 984px;
+    }
+    @media (max-width: 320px) {
+      max-width: 280px;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .team {
+    padding: 78px 20px;
+  }
+}
+@media (max-width: 320px) {
+  .team {
+    padding: 35px 20px;
+  }
+}
+
+.card__team {
+  max-width: 270px;
+  width: 100%;
+  @media (max-width: 1024px) {
+    .card__team {
+      max-width: 227px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 320px) {
+      max-width: 280px;
+    }
+  }
+
+  .card__image {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin-bottom: 30px;
+    @media (max-width: 1024px) {
+      margin-bottom: 25px;
+    }
+    @media (max-width: 320px) {
+      margin-bottom: 25px;
+    }
+  }
+  .card__name {
+    @include font(24px, 28px, 700);
+    color: $colorTitle;
+    margin-bottom: 5px;
+    @media (max-width: 1024px) {
+      @include font(18px, 21px, 700);
+    }
+    @media (max-width: 320px) {
+      @include font(18px, 21px, 700);
+    }
+  }
+  .card__job {
+    @include font(18px, 21px, 400);
+    color: $colorbg;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+    @media (max-width: 1024px) {
+      @include font(14px, 16px, 400);
+      margin-bottom: 22px;
+    }
+    @media (max-width: 320px) {
+      @include font(14px, 16px, 400);
+      margin-bottom: 38px;
+    }
+  }
+  .card__text {
+    @include font(18px, 21px, 400);
+    color: $colorText;
+    margin-bottom: 37px;
+    @media (max-width: 1024px) {
+      @include font(14px, 16px, 400);
+      margin-bottom: 39px;
+    }
+    @media (max-width: 320px) {
+      @include font(14px, 16px, 400);
+      margin-bottom: 55px;
+    }
+  }
+  .card__icons {
+    display: flex;
+    column-gap: 6px;
+  }
+
+  .card__icon {
+    width: 39px;
+    height: 39px;
+    @media (max-width: 1024px) {
+      width: 35px;
+      height: 35px;
+    }
+    @media (max-width: 320px) {
+      width: 39px;
+      height: 39px;
+    }
+  }
+}
+.card__icons:hover {
+  color: $colorbg;
+}
+
+.testimonials {
+  padding: 0 170px;
+  background-color: #5c3249;
+  &__container {
+    display: flex;
+    align-items: center;
+    column-gap: 31px;
+    @media (max-width: 1024px) {
+      column-gap: 19px;
+    }
+    @media (max-width: 320px) {
+      display: none;
+    }
+  }
+  &__img {
+    width: 570px;
+    height: 490px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    @media (max-width: 1024px) {
+      width: 482px;
+      height: 332px;
+    }
+    @media (max-width: 320px) {
+      width: 280px;
+      height: 218px;
+    }
+  }
+  &__content {
+    flex-direction: column;
+    @media (max-width: 320px) {
+      text-align: center;
+    }
+  }
+  &__text {
+    font-family: $fontCardo;
+    @include font(36px, 39px, 400);
+    color: #fff;
+    max-height: 230px;
+    font-style: italic;
+    margin-bottom: 20px;
+    @media (max-width: 1024px) {
+      @include font(24px, 32px, 400);
+      max-height: 96px;
+    }
+    @media (max-width: 320px) {
+      @include font(24px, 32px, 400);
+      margin-bottom: 15px;
+    }
+  }
+  &__subtext {
+    @include font(13px, 15px, 700);
+    color: #fff;
+    @media (max-width: 1024px) {
+      @include font(12px, 14px, 700);
+    }
+    @media (max-width: 320px) {
+      @include font(12px, 14px, 700);
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .testimonials {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 320px) {
+  .testimonials {
+    padding: 0 19px 95px;
   }
 }
