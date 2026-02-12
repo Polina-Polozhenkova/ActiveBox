@@ -329,6 +329,7 @@ body {
     color: #fff;
     margin-bottom: 36px;
     text-transform: uppercase;
+    text-align: center;
     @media (max-width: 1024px) {
       @include font(18px, 21px, 900);
       margin-bottom: 22px;
@@ -339,6 +340,7 @@ body {
     }
   }
   &__text {
+    text-align: center;
     @include font(18px, 21px, 400);
     color: #fff;
     @media (max-width: 1024px) {
@@ -470,11 +472,13 @@ svg:active {
 }
 
 .testimonials {
-  background-color: #5c3249;
+  background-color: #53354a;
+  width: 100%;
+  position: relative;
+  z-index: 1;
   &__container {
     display: flex;
     align-items: center;
-    column-gap: 31px;
     @media (max-width: 1024px) {
       column-gap: 19px;
     }
@@ -485,21 +489,30 @@ svg:active {
   }
   &__img {
     max-width: 50%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 570/490;
     object-fit: cover;
+    display: block;
     @media (max-width: 1024px) {
-      max-width: 49%;
+      max-width: 50%;
       aspect-ratio: 482/322;
     }
     @media (max-width: 767px) {
-      max-width: 100%;
+      max-width: 280px;
       width: 100%;
-      aspect-ratio: 208/218;
+      aspect-ratio: 280/218;
     }
   }
   &__content {
+    width: 50%;
+    padding: 116px 0 116px 31px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     @media (max-width: 767px) {
       text-align: center;
+      padding: 0 0px;
+      width: 100%;
+      flex-direction: column;
     }
   }
   &__text {
@@ -508,6 +521,7 @@ svg:active {
     color: #fff;
     font-style: italic;
     margin-bottom: 20px;
+    text-align: center;
     @media (max-width: 1024px) {
       @include font(24px, 32px, 400);
       margin-bottom: 9px;
@@ -520,13 +534,47 @@ svg:active {
   &__subtext {
     @include font(13px, 15px, 700);
     color: #fff;
+    text-align: left;
     @media (max-width: 1024px) {
       @include font(12px, 14px, 700);
     }
     @media (max-width: 767px) {
       @include font(12px, 14px, 700);
-      text-align: left;
+      text-align: center;
     }
+  }
+}
+.testimonial {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  padding: 0 20px;
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+  }
+}
+.swiper-pagination {
+  bottom: -50px !important;
+  display: flex;
+  column-gap: 25px;
+  justify-content: center;
+  position: absolute;
+  @media (max-width: 767px) {
+    column-gap: 20px;
+  }
+  .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #5c3249;
+    border-radius: 50%;
+    background-color: transparent;
+    margin: 0;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #5c3249;
   }
 }
 @media (max-width: 1024px) {
@@ -567,7 +615,7 @@ svg:active {
       margin-bottom: 45px;
     }
     @media (max-width: 767px) {
-      @include font(13px, 15px, 900);
+      @include font(13px, 15px, 700);
       margin-bottom: 13px;
     }
   }
